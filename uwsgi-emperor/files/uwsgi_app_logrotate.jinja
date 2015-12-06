@@ -1,0 +1,9 @@
+"{{ app_log_file }}" {
+  copytruncate
+  daily
+  rotate 10
+  compress
+  delaycompress
+  missingok
+  notifempty
+}

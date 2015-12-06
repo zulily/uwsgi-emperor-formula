@@ -1,0 +1,12 @@
+{% set uwsgi_emperor = salt['grains.filter_by']({
+    'Debian': {
+        'conf_file': '/etc/uwsgi-emperor/emperor.ini',
+        'conf_dir': '/etc/uwsgi-emperor',
+        'vassals_dir': '/etc/uwsgi-emperor/vassals',
+        'package': 'uwsgi-emperor',
+        'service': 'uwsgi-emperor',
+        'user': 'www-data',
+        'group': 'www-data',
+        'log_dir': '/var/log/uwsgi',
+    },
+}) %}

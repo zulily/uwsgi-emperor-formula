@@ -1,0 +1,28 @@
+uwsgi_emperor:
+  settings:
+    user: www-data
+    group: www-data
+    vassals_dir: /etc/uwsgi-emperor/vassals
+  plugins:
+    - uwsgi-plugin-python
+  emperor:
+    - autoload: "true"
+    - master: "true"
+    - workers: 2
+    - no-orphans: "true"
+    - log-date: "true"
+  vassals: []
+# Example setup for a Django ReST Framework app, "api" (v1) in an "infrastructure" project
+#    - api_v1:
+#      - plugin: python
+#      - chdir: /opt/webapps/api/v1/infrastructure
+#      - module: infrastructure.wsgi:application
+#      - socket: 127.0.0.1:8000
+#      - processes: 2
+#      - threads: 4
+#      - max-requests: 1000
+#      - harakiri: 30
+#      - env: DJANGO_SETTINGS_MODULE=infrastructure.settings
+#      - home: /opt/venv/api_v1
+#      - logto: /var/log/uwsgi/api_v1.log
+#      - stats: 127.0.0.1:9000

@@ -1,0 +1,4 @@
+[uwsgi]
+{% for item in settings %}
+{{ item.keys()[0] }} = {{ item[item.keys()[0]] }}
+{%- endfor %}
