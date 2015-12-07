@@ -61,4 +61,7 @@ ToDo / Known Issues
 ===================
 + Add support for non-Debian-based distributions
 
+License
+=======
 
+Apache License, version 2.0.  Please see LICENSE
